@@ -5,6 +5,8 @@ import ir.sharif.divarmehrabani.webservices.webservices.rest_auth.register.Regis
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
+import webservices.rest_auth.create_request.CreateRequestRequest;
+import webservices.rest_auth.create_request.CreateRequestResponse;
 import webservices.rest_auth.login.LoginRequest;
 import webservices.rest_auth.login.LoginResponse;
 import webservices.rest_auth.read_charities.ReadCharitiesRequest;
@@ -24,9 +26,10 @@ public interface WebserviceUrls {
     @POST(WebserviceAdresses.VOLUNTEER_SIGNUP)
     Call<SignupResponse> signup(@Body SignupRequest request);
 
-    @POST(WebserviceAdresses.VOLUNTEER_READ_CHARITIES)
+    @GET(WebserviceAdresses.VOLUNTEER_READ_CHARITIES)
     Call<ReadCharitiesResponse> raadcharities(@Body ReadCharitiesRequest request);
 
-
+    @POST(WebserviceAdresses.VOLUNTEER_CREATE_REQUEST)
+    Call<CreateRequestResponse> createRequest(@Body CreateRequestRequest request);
 
 }

@@ -16,7 +16,7 @@ public class ReadCharitiesProcess extends BaseProcess {
 
     @Override
     public ReadCharitiesResponse process() throws IOException, WebserviceException {
-        Call<ReadCharitiesResponse> register = MyRetrofit.getInstance().getWebserviceUrls().raadcharities(request);
+        Call<ReadCharitiesResponse> register = MyRetrofit.getInstance().getWebserviceUrls().createRequest(request);
         return send(register);
     }
 }

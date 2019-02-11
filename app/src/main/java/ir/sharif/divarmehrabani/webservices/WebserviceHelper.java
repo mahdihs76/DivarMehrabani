@@ -3,6 +3,8 @@ package ir.sharif.divarmehrabani.webservices;
 import ir.sharif.divarmehrabani.webservices.base.WebserviceException;
 import ir.sharif.divarmehrabani.webservices.webservices.rest_auth.register.RegisterProcess;
 import ir.sharif.divarmehrabani.webservices.webservices.rest_auth.register.RegisterResponse;
+import webservices.rest_auth.create_request.CreateRequestProcess;
+import webservices.rest_auth.create_request.CreateRequestResponse;
 import webservices.rest_auth.login.LoginResponse;
 import webservices.rest_auth.read_charities.ReadCharitiesProcess;
 
@@ -31,4 +33,8 @@ public class WebserviceHelper {
         return process.process();
     }
 
+    public static CreateRequestResponse createRequest(int charityId, String description, String state, int volunteerId) throws IOException, WebserviceException {
+        CreateRequestProcess process = new CreateRequestProcess(charityId, description, state, volunteerId);
+        return process.process();
+    }
 }
