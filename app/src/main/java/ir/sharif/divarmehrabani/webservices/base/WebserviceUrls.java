@@ -7,6 +7,8 @@ import retrofit2.http.Body;
 import retrofit2.http.POST;
 import webservices.rest_auth.login.LoginRequest;
 import webservices.rest_auth.login.LoginResponse;
+import webservices.rest_auth.read_charities.ReadCharitiesRequest;
+import webservices.rest_auth.read_charities.ReadCharitiesResponse;
 import webservices.rest_auth.signup.SignupRequest;
 import webservices.rest_auth.signup.SignupResponse;
 
@@ -21,5 +23,10 @@ public interface WebserviceUrls {
 
     @POST(WebserviceAdresses.VOLUNTEER_SIGNUP)
     Call<SignupResponse> signup(@Body SignupRequest request);
+
+    @POST(WebserviceAdresses.VOLUNTEER_READ_CHARITIES)
+    Call<ReadCharitiesResponse> raadcharities(@Body ReadCharitiesRequest request);
+
+
 
 }
